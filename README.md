@@ -1,8 +1,8 @@
 # PACMAN
 
-Projet Polytech
+Projet Polytech 2014
 
-Participant :
+Participants :
 - BERTAND-DALECHAMPS Adele
 - DARRIGOL Marie
 - KLIPFFEL Tararaina
