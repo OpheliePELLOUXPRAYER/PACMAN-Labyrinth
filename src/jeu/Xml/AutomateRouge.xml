@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MonAutomate nb_automates="2">
+	<automate classe="pacman" nb_etat="4" image="pacman.png">
+		<touches>
+			<haut>haut</haut>
+			<bas>bas</bas>
+			<gauche>gauche</gauche>
+			<droite>droite</droite>
+			<rotation_gauche>:</rotation_gauche>
+			<rotation_droite>!</rotation_droite>
+		</touches>
+		<etat id="0" nb_transition="3">
+			<action>attendre</action>
+			<transition id="0">
+				<action>mur</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>
+			<transition id="1">
+				<action>derniere_touche_est_0_1_2_3</action>
+				<etat_sortie>2</etat_sortie>
+			</transition>
+			<transition id="2">
+				<action>derniere_touche_est_4_5</action>
+				<etat_sortie>3</etat_sortie>
+			</transition>
+		</etat>
+		<etat id="1" nb_transition="4">
+			<action>avancer</action>
+			<transition id="0">
+				<action>mur</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>
+			<transition id="1">
+				<action>derniere_touche_est_0_1_2_3</action>
+				<etat_sortie>2</etat_sortie>
+			</transition>
+			<transition id="2">
+				<action>non_mur_et_derniere_touche_est_null</action>
+				<etat_sortie>1</etat_sortie>
+			</transition>
+			<transition id="3">
+				<action>derniere_touche_est_4_5</action>
+				<etat_sortie>3</etat_sortie>
+			</transition>
+		</etat>
+		<etat id ="2" nb_transition="4">
+			<action>tourner_perso</action>
+			<transition id="0">
+				<action>mur</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>	
+			<transition id="1">
+				<action>derniere_touche_est_null</action>
+				<etat_sortie>1</etat_sortie>
+			</transition>
+			<transition id="2">
+				<action>derniere_touche_est_0_1_2_3</action>
+				<etat_sortie>2</etat_sortie>
+			</transition>
+			<transition id="3">
+				<action>derniere_touche_est_4_5</action>
+				<etat_sortie>3</etat_sortie>
+			</transition>
+		</etat>
+		<etat id="3" nb_transition="2">
+			<action>tourner_piece</action>
+			<transition id="0">
+				<action>E</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>
+			<transition id="1">
+				<action>derniere_touche_est_4_5</action>
+				<etat_sortie>3</etat_sortie>
+			</transition>
+		</etat>
+	</automate>
+	<automate classe="fantome_rouge" nb_etat="3" image="FantomeRouge.png">
+		<touches>
+			<haut>null</haut>
+			<bas>null</bas>
+			<gauche>null</gauche>
+			<droite>null</droite>
+			<rotation_gauche>null</rotation_gauche>
+			<rotation_droite>null</rotation_droite>
+		</touches>
+		<etat id="0" nb_transition="3">
+			<action>traquer</action>
+			<transition id="1">
+				<action>voitPC</action>
+				<etat_sortie>2</etat_sortie>
+			</transition>
+			<transition id="0">
+				<action>apeure</action>
+				<etat_sortie>1</etat_sortie>
+			</transition>
+		</etat>
+		<etat id="1" nb_transition="3">
+			<action>fuir</action>
+			<transition id="0">
+				<action>non_apeure_et_non_voitPC</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>
+			<transition id="1">
+				<action>non_apeure_et_voitPC</action>
+				<etat_sortie>2</etat_sortie>
+			</transition>
+		</etat>
+		<etat id="2" nb_transition="2">
+			<action>chasser</action>
+			<transition id="0">
+				<action>non_voitPC</action>
+				<etat_sortie>0</etat_sortie>
+			</transition>
+			<transition id="1">
+				<action>apeure</action>
+				<etat_sortie>1</etat_sortie>
+			</transition>
+		</etat>
+	</automate>
+</MonAutomate>
