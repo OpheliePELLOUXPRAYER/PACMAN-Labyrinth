@@ -1,8 +1,8 @@
-# PACMAN
+# PACMAN-Labyrinth
 
 Projet Polytech 2014
 
-Participants :
+Participantes :
 - BERTAND-DALECHAMPS Adele
 - DARRIGOL Marie
 - KLIPFFEL Tararaina
